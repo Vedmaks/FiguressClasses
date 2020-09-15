@@ -49,9 +49,9 @@ class Triangle
         echo '(P) Периметр треугольника ' .
             $name .
             ' = ' .
-            $this->getTrianglePerimeter()  .
+            round($this->getTrianglePerimeter(), 2)  .
             ', (S) площадь = ' .
-            $this->getTriangleSquare();
+            round($this->getTriangleSquare(), 2);
     }
 
     private function getLine($num)

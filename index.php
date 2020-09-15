@@ -20,7 +20,7 @@ echo '<hr>';
 echo '<hr>';
 
 $triangle1 = new Triangle($point1, $point2, $point3);
-$triangle1->echoTriangleParam('old');
+$triangle1->echoTriangleParam('abc');
 echo '<hr>';
 
 $point1->setX(8);
@@ -31,15 +31,6 @@ $point3->setX(6);
 $point3->setY(8);
 
 $triangle1->echoTriangleParam('new1');
-echo '<hr>';
-
-$point1->setY(7);
-$point2->setX(16);
-$point2->setY(7);
-$point3->setX(12);
-$point3->setY(1);
-
-$triangle1->echoTriangleParam('new2');
 echo '<hr>';
 
 (new Triangle(new Point(12, 7), new Point(5, 17), new Point(9, 22)))->echoTriangleParam('newest');

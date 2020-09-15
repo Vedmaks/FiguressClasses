@@ -27,7 +27,7 @@ class Line
         $powX = pow($this->point2->getX() - $this->point1->getX(), 2);
         $powY = pow($this->point2->getY() - $this->point1->getY(), 2);
 
-        return sqrt($powX + $powY);
+        return round(sqrt($powX + $powY), 2);
     }
 
     public function getHeight(): float
