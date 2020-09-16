@@ -3,9 +3,8 @@
 namespace Classes3d;
 
 use Classes2d\Point;
-use Classes2d\iParam;
 
-class Point3D extends Point implements iParam
+class Point3D extends Point
 {
     private int $z;
 

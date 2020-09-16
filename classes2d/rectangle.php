@@ -2,27 +2,16 @@
 
 namespace Classes2d;
 
-class Rectangle implements iParam2d
+class Rectangle extends Figure3Points implements iParam2d
 {
-    protected $line1;
-    protected $line2;
-
-    public function __construct(Line $line1, Line $line2)
-    {
-        $this->line1 = $line1->getLength();
-        $this->line2 = $line2->getLength();
-
-        return $this;
-    }
-
     public function getPerimeter(): float
     {
-        return ($this->line1 + $this->line2) * 2;
+        return ($this->getLine(1) + $this->getLine(2)) * 2;
     }
 
     public function getSquare(): float
     {
-        return $this->line1 * $this->line2;
+        return $this->getLine(1) * $this->getLine(2);
     }
 
     public function echoParam(string $name = '')

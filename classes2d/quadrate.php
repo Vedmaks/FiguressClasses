@@ -2,25 +2,16 @@
 
 namespace Classes2d;
 
-class Quadrate implements iParam2d
+class Quadrate extends Figure2Points implements iParam2d
 {
-    protected $edge;
-
-    public function __construct(Line $line)
-    {
-        $this->edge = $line->getLength();
-
-        return $this;
-    }
-
     public function getPerimeter(): float
     {
-        return $this->edge * 4;
+        return $this->getLine(1) * 4;
     }
 
     public function getSquare(): float
     {
-        return $this->edge * $this->edge;
+        return $this->getLine(1) * $this->getLine(1);
     }
 
     public function echoParam(string $name = '')

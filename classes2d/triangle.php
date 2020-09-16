@@ -2,39 +2,8 @@
 
 namespace Classes2d;
 
-class Triangle implements iParam2d
+class Triangle extends Figure3Points implements iParam2d
 {
-
-    private Point $point1;
-
-    private Point $point2;
-
-    private Point $point3;
-
-    public function __construct(Point $point1, Point $point2, Point $point3)
-    {
-        $this->point1 = $point1;
-        $this->point2 = $point2;
-        $this->point3 = $point3;
-
-        return $this;
-    }
-
-    public function setPoint1(Point $point1): void
-    {
-        $this->point1 = $point1;
-    }
-
-    public function setPoint2(Point $point2): void
-    {
-        $this->point2 = $point2;
-    }
-
-    public function setPoint3(Point $point3): void
-    {
-        $this->point3 = $point3;
-    }
-
     public function getPerimeter(): float
     {
         return $this->getLine(1) + $this->getLine(2) + $this->getLine(3);
@@ -57,31 +26,5 @@ class Triangle implements iParam2d
             '<br>' .
             '(S) Площадь = ' .
             round($this->getSquare(), 2);
-    }
-
-    private function getLine($num)
-    {
-        $p1x = $this->point1->getX();
-        $p1y = $this->point1->getY();
-        $p2x = $this->point2->getX();
-        $p2y = $this->point2->getY();
-        $p3x = $this->point3->getX();
-        $p3y = $this->point3->getY();
-        $p4x = $this->point4->getX();
-        $p4y = $this->point4->getY();
-
-        if ($num == 1) {
-            return sqrt(pow($p1x-$p3x,2) + pow($p1y-$p3y,2));
-        }
-
-        if ($num == 2) {
-            return sqrt(pow($p1x-$p2x,2) + pow($p1y-$p2y,2));
-        }
-
-        if ($num == 3) {
-            return sqrt(pow($p2x-$p3x,2) + pow($p2y-$p3y,2));
-        }
-
-        return null;
     }
 }

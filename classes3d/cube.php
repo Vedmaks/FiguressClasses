@@ -31,6 +31,6 @@ class Cube extends Quadrate implements iParam3d
 
     public function getVolume()
     {
-        return $this->getSquare() * $this->edge;
+        return $this->getSquare() * $this->getLine(1);
     }
 }
