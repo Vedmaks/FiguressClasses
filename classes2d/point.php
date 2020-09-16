@@ -1,5 +1,8 @@
 <?php
-class Point
+
+namespace Classes2d;
+
+class Point implements iParam
 {
     private int $x;
     private int $y;
@@ -8,6 +11,8 @@ class Point
     {
         $this->x = $x;
         $this->y = $y;
+
+        return $this;
     }
 
     public function getX(): int
@@ -28,5 +33,10 @@ class Point
     public function setY(int $y): void
     {
         $this->y = $y;
+    }
+
+    public function echoParam(string $name = '')
+    {
+        echo 'Координаты точки ' . $name . ': x = ' . $this->getX()  . ', y = ' . $this->getY();
     }
 }

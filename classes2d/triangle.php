@@ -1,5 +1,8 @@
 <?php
-class Triangle
+
+namespace Classes2d;
+
+class Triangle implements iParam2d
 {
 
     private Point $point1;
@@ -32,26 +35,28 @@ class Triangle
         $this->point3 = $point3;
     }
 
-    public function getTrianglePerimeter(): float
+    public function getPerimeter(): float
     {
         return $this->getLine(1) + $this->getLine(2) + $this->getLine(3);
     }
 
-    public function getTriangleSquare(): float
+    public function getSquare(): float
     {
-        $p = $this->getTrianglePerimeter()/2;
+        $p = $this->getPerimeter()/2;
 
         return  sqrt($p * ($p - $this->getLine(1)) * ($p - $this->getLine(2)) * ($p - $this->getLine(3)));
     }
 
-    public function echoTriangleParam(string $name = '')
+    public function echoParam(string $name = '')
     {
-        echo '(P) Периметр треугольника ' .
+        echo 'Треугольник ' .
             $name .
-            ' = ' .
-            round($this->getTrianglePerimeter(), 2)  .
-            ', (S) площадь = ' .
-            round($this->getTriangleSquare(), 2);
+            ': <br>' .
+            '(P) Периметр = ' .
+            round($this->getPerimeter(), 2)  .
+            '<br>' .
+            '(S) Площадь = ' .
+            round($this->getSquare(), 2);
     }
 
     private function getLine($num)
@@ -62,17 +67,21 @@ class Triangle
         $p2y = $this->point2->getY();
         $p3x = $this->point3->getX();
         $p3y = $this->point3->getY();
+        $p4x = $this->point4->getX();
+        $p4y = $this->point4->getY();
 
         if ($num == 1) {
             return sqrt(pow($p1x-$p3x,2) + pow($p1y-$p3y,2));
         }
+
         if ($num == 2) {
             return sqrt(pow($p1x-$p2x,2) + pow($p1y-$p2y,2));
         }
+
         if ($num == 3) {
             return sqrt(pow($p2x-$p3x,2) + pow($p2y-$p3y,2));
         }
+
         return null;
     }
-
 }

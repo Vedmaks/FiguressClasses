@@ -1,5 +1,8 @@
 <?php
-class Line
+
+namespace Classes2d;
+
+class Line implements iParam
 {
     private Point $point1;
 
@@ -9,6 +12,7 @@ class Line
     {
         $this->point1 = $point1;
         $this->point2 = $point2;
+
         return $this;
     }
 
@@ -30,6 +34,7 @@ class Line
         return round(sqrt($powX + $powY), 2);
     }
 
+    /*
     public function getHeight(): float
     {
         $a = $this->point1->getY();
@@ -41,10 +46,10 @@ class Line
 
         return $b;
     }
+    */
 
-    public function echoLineParam(string $name = '')
+    public function echoParam(string $name = '')
     {
-        echo 'Длина линни ' . $name . ' = ' . $this->getLength()  . ', высшая точка = ' . $this->getHeight();
+        echo 'Длина линни ' . $name . ' = ' . $this->getLength();
     }
-
 }
